@@ -1,6 +1,8 @@
 #ifndef INDICE_H_INCLUDED
 #define INDICE_H_INCLUDED
 
+#include <gtk/gtk.h>
+
 #define tamanho_estrutura 150
 #define tamanho_entrada 14
 #define tamanho_saida 14
