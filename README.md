@@ -7,7 +7,7 @@ Uma calculadora simples, possuindo todas as funções completas, como as funçõ
 
 Estrutura:
 
-Foram utilizadas apenas as bibliotecas padrão da linguagem C e da API GTK.
+Foram utilizadas apenas as bibliotecas padrão da linguagem C e da API GTK, além da API GLADE para montar os arquivos .XML de estrutura.
 
 Como compilar:
 
