@@ -30,6 +30,7 @@ Para compilar é necessário ter os pacotes GTK3 no sistema, caso não os tenha,
 Versionamento:
 
 Versão 1.0: Inicial
+
 Versão 1.1: Correção de erros de memória que causavam crashes ao tentar executar operações.
 
 //----------------------------------------------------------------------------------------------------------------------------
