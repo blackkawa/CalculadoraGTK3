@@ -9,40 +9,40 @@
 void identificador_calculo(struct estrutura_dados *dados)
 {
     int indice = 0;
-    const char *buffer_analise[tamanho_entrada];
+    const char *texto_analise;
 
     printf("Repassando os dados do buffer para ser analisado...\n");
-    *buffer_analise = gtk_entry_buffer_get_text(dados->buffer_calculo);
+    texto_analise = gtk_entry_buffer_get_text(dados->buffer_calculo);
 
     //Este loop busca o buffer pelo operador matematico
     printf("Buscando operadores...\n");
     for(indice = 0;indice<tamanho_entrada;indice++)
     {
 
-        if(strpbrk(*buffer_analise, "+")!=NULL)
+        if(strpbrk(texto_analise, "+")!=NULL)
            {
                 printf("A funcao SOMA foi encontrada! Repassando para analisar...\n");
-                strcpy(dados->saida, *buffer_analise);
+                strcpy(dados->saida, texto_analise);
                 calculo_somar(dados);
                 break;
-           }else if(strpbrk(*buffer_analise, "-")!=NULL)
+           }else if(strpbrk(texto_analise, "-")!=NULL)
                 {
                     printf("A funcao SUBTRAIR foi encontrada! Repassando para analisar...\n");
-                    strcpy(dados->saida, *buffer_analise);
+                    strcpy(dados->saida, texto_analise);
                     calculo_subtrair(dados);
                     break;
 
-                }else if(strpbrk(*buffer_analise, "*")!=NULL)
+                }else if(strpbrk(texto_analise, "*")!=NULL)
                     {
                         printf("A funcao MULTIPLICAR foi encontrada! Repassando para analisar...\n");
-                        strcpy(dados->saida, *buffer_analise);
+                        strcpy(dados->saida, texto_analise);
                         calculo_multiplicar(dados);
                         break;
 
-                    }else if(strpbrk(*buffer_analise, "/")!=NULL)
+                    }else if(strpbrk(texto_analise, "/")!=NULL)
                         {
                             printf("A funcao DIVIDIR foi encontrada! Repassando para analisar...\n");
-                            strcpy(dados->saida, *buffer_analise);
+                            strcpy(dados->saida, texto_analise);
                             calculo_dividir(dados);
                             break;
 

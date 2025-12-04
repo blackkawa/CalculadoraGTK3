@@ -5,6 +5,7 @@
 #include <ctype.h>
 
 //Versão 1.0 - Finalizada!
+///Versão 1.1 Correção de erros: refatoração da alocação para evitar estouro de memória
 
 //Esta parte do programa monta a estrutura visual do programa em GTK, e liga os botoes aos sinais correspondentes, além de inicializar
 //a estrutura global do programa.
@@ -236,7 +237,7 @@ int alocar_estrutura()
     }
 
     printf("Alocando a label...\n");
-    dados->label_resultado_conta = malloc(sizeof(tamanho_label_resultado_conta));
+    dados->label_resultado_conta = malloc(tamanho_label_resultado_conta * sizeof(char));
     if(dados->saida==NULL)
     {
         printf("Erro! Erro nº %i, do tipo: %s", errno, strerror(errno));
@@ -244,7 +245,7 @@ int alocar_estrutura()
     }
 
     printf("Alocando o buffer...\n");
-    dados->buffer_calculo = malloc(sizeof(char[tamanho_entrada]));
+    dados->buffer_calculo = malloc(tamanho_entrada * sizeof(char));
     if(dados->buffer_calculo==NULL)
     {
         printf("Erro! Erro nº %i, do tipo: %s", errno, strerror(errno));
@@ -258,6 +259,8 @@ int alocar_estrutura()
         printf("Erro! Erro nº %i, do tipo: %s", errno, strerror(errno));
         return TRUE;
     }
+
+    dados->saida = malloc(tamanho_saida * sizeof(char));
 
     printf("Inicializando a entrada e a saida...\n");
     printf("Inicializando entrada...\n");

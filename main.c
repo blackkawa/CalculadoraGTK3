@@ -5,6 +5,7 @@
 #include <errno.h>
 
 //Versão 1.0 Final!
+///Versão 1.1 - Correção de estruturas de memória para evitar Crashes
 //Feito por: Gustavo Moretto Itikawa
 
 
